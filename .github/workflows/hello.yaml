@@ -6,8 +6,15 @@ on:
       - main
 
 jobs:
-  Hello:
-    runs-on: ubuntu-18.04
+  test-app:
+    runs-on: ubuntu-latest
     steps:
-      - name: Hello World
-        run: echo "Hello World"
+    - name: Install Go
+      uses: actions/setup-go@v3
+      with: 
+        go-version: latest
+
+    - uses: actions/checkout@v2
+    - name: Test 
+      run: go test main_test.go 
+        
