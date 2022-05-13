@@ -1,0 +1,13 @@
+name: testing github action
+
+on:
+  push:
+    branchs:
+      - main
+
+jobs:
+  Hello:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Hello World
+      run: echo "Hello World"
